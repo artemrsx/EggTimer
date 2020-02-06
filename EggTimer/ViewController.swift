@@ -1,43 +1,39 @@
-//
-//  ViewController.swift
-//  EggTimer
-//
-//  Created by Angela Yu on 08/07/2019.
-//  Copyright © 2019 The App Brewery. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
     
-    let softTime = 5;
-    let mediumTime = 7;
-    let hardTime = 12;
-    
     let eggTimes = [
-        "Soft": 5,
-        "Medium": 7,
-        "Hard": 12
+        "Soft": 3,
+        "Medium": 4,
+        "Hard": 7
     ]
+    var totalTime = 0;
+    var secondsPassed = 0;
+    var timer = Timer();
+    
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var appTitle: UILabel!
+    @objc func update() {
+        if (secondsPassed < totalTime) {
+            secondsPassed += 1;
+            progressBar.progress = Float(secondsPassed)/Float(totalTime);
+        } else {
+            appTitle.text = "DONE !!!"
+            timer.invalidate();
+        }
+    }
     
     @IBAction func onEggPress(_ sender: UIButton) {
-        var time: Int;
-        let title: String = sender.currentTitle!;
-
-        print(eggTimes[title]!);
+        timer.invalidate();
         
-        switch title {
-        case "Soft":
-            time = 5;
-        case "Medium":
-            time = 7;
-        case "Hard":
-            time = 12;
-        default:
-            time = 0;
-        }
+        let title: String! = sender.currentTitle;
         
-        print(title, time);
+        totalTime = eggTimes[title]!;
+        appTitle.text = title;
+        secondsPassed = 0;
+        progressBar.progress = 0;
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
     
 
