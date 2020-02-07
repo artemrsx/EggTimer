@@ -129,8 +129,16 @@
                                                 <color key="progressTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </progressView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfq-yt-8Nz">
+                                                <rect key="frame" x="162.5" y="74.5" width="49" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="Pfq-yt-8Nz" firstAttribute="centerX" secondItem="nJN-th-c5K" secondAttribute="centerX" id="K9X-zG-xqP"/>
+                                            <constraint firstItem="FXx-Jo-xYU" firstAttribute="top" secondItem="Pfq-yt-8Nz" secondAttribute="bottom" constant="10" id="e9p-XH-1YJ"/>
                                             <constraint firstItem="FXx-Jo-xYU" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="egv-a8-I3X"/>
                                             <constraint firstItem="FXx-Jo-xYU" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" constant="20" symbolic="YES" id="n6B-Fg-tzF"/>
                                             <constraint firstAttribute="trailing" secondItem="FXx-Jo-xYU" secondAttribute="trailing" id="nIp-Xg-zW0"/>
@@ -151,6 +159,7 @@
                     <connections>
                         <outlet property="appTitle" destination="XLm-5r-pSP" id="zgN-2G-rsf"/>
                         <outlet property="progressBar" destination="FXx-Jo-xYU" id="42q-RL-pwh"/>
+                        <outlet property="progressLabel" destination="Pfq-yt-8Nz" id="ETl-yb-KOe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
