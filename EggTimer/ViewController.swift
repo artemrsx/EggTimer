@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var appTitle: UILabel!
+    // @objc
     @objc func update() {
         if (secondsPassed < totalTime) {
             let progress = Float(secondsPassed)/Float(totalTime);
